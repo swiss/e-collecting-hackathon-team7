@@ -103,7 +103,7 @@ sequenceDiagram
 
 ## Topics addressed
 
-Für den Hackathon wollen wir uns mit der Frage auseinandersetzen, **wie das System weiterentwickelt werden kann, so dass es auch Kantonen einen Mehrwert bringt, die (noch) nicht über ein zentrales Stimmregister verfügen**.
+Am Hackathon wollen wir uns mit der Frage auseinandersetzen, **wie das System weiterentwickelt werden kann, so dass es auch Kantonen einen Mehrwert bringt, die (noch) nicht über ein zentrales Stimmregister verfügen**.
 
 Dabei stellen sich Fragen wie:
 - Welche Daten müssen ausgetauscht werden und auf welchem Weg?
