@@ -1,10 +1,26 @@
-# 7) Vom St.Galler E-Collecting Portal zur Lösung für eidgenössische Vorlagen
+# 7) Von der St.Galler E-Collecting Plattform zur Lösung für eidgenössische Vorlagen
 
 *Over the course of two days, you will develop your solution for collecting electronic signatures for popular initiatives and referendums from A to Z, addressing the 10 topics outlined in the [guidelines](https://www.bk.admin.ch/bk/de/home/politische-rechte/e-collecting/aktuelles.html). Your prototype can be conceptual, clickable, and/or technical. Either way, you should clearly present the interactions and data flows between actors, software, and infrastructure components over time, as well as the user experience of these actors.*
 
 ## Approach
 
-*A brief description of your approach, a link/reference to the detailed description of your approach and what you have already created (if applicable). Please also mention which skills you need for your team.*
+Der Kanton St.Gallen hat einen parlamentarischen Auftrag für die Entwicklung von Rechtsgrundlagen und einer E-Collecting-Plattform für Pilotversuche mit kantonalen Initiativen und Referenden.
+
+Die gesetzlichen Grundlagen wurden im September verabschiedet und sehen für die Pilotphase eine sogenannte Fixanteillösung vor. Das bedeutet, dass in einem ersten Schritt höchstens 50% der benötigten Unterschriften elektronisch gesammelt werden dürfen.
+
+Die Entwicklung der E-Collecting-Plattform wurde öffentlich ausgeschrieben und ihre Umsetzung ist bereits sehr weit fortgeschritten. Der Go-Live ist fürs Frühjahr 2026 geplant.
+
+Vorgängig wird der Quellcode der Plattform im Rahmen eines Bug-Bounty-Programms offengelegt. Das Private Bug Bounty läuft bereits seit Ende August; das Public Bug Bounty startet Anfang Dezember.
+
+Die E-Collecting-Plattform wurde so umgesetzt, dass sie alle rechtlichen und politischen Anforderungen im Kanton St.Gallen erfüllt. Dazu gehört unter anderem, dass… 
+- Mängel bei den Stimmrechtsbescheinigungen durch die Gemeinden von der Staatskanzlei mittels Stichprobenkontrolle behoben werden müssen (Artikel 26 des Gesetzes über Referenden und Initiativen);
+- Mehrfachunterzeichnungen verhindert werden müssen (Fixanteillösung, i.e. 50 Prozent der Unterschriften müssen weiterhin auf herkömmlichem Weg gesammelt werden);
+- die Bestimmungen des Datenschutzgesetzes des Kantons St.Gallens erfüllt werden;
+- die Gemeinden entlastet werden müssen.
+
+Damit erfüllt die St.Galler Plattform alle Voraussetzungen, um ab dem Frühjahr 2026 erste Erfahrungen mit E-Collecting zu sammeln und die Auswirkungen aufs politische System untersuchen zu können. Auf Basis dieser Erfahrungen kann dann beurteilt werden, ob eine Anpassung von Sammelfristen oder Quoren nötig ist.
+
+Die E-Collecting-Plattform ist so gebaut, dass sie für zukünftige Sammlungen auf Bundesebene weiterentwickelt werden kann. Bereits heute ist es möglich, die Plattform für die Prüfung und Bescheinigung der physischen Unterschriften auf allen föderalen Ebenen zu verwenden.
 
 ## Documentation and Diagrams
 
@@ -85,14 +101,14 @@ sequenceDiagram
 
 ## Topics addressed
 
-*Explain how you addressed the topics presented in the [guidelines](https://www.bk.admin.ch/bk/de/home/politische-rechte/e-collecting/aktuelles.html), filling in the template below.*
+Für den Hackathon wollen wir uns mit der Frage auseinandersetzen, **wie das System weiterentwickelt werden kann, so dass es auch Kantonen einen Mehrwert bringt, die (noch) nicht über ein zentrales Stimmregister verfügen**.
 
-| Topic | (How) is it addressed? |
-| -| ------- |
-| 1 |  |
-| 2 |  |
-| 3 |  |
-| ... |  |
+Dabei stellen sich Fragen wie:
+- Welche Daten müssen ausgetauscht werden und auf welchem Weg?
+- Wie viel Zeitverlust zwischen Unterzeichnung und Bescheinigung einer Unterschrift ist akzeptabel?
+- Wie muss der Prozess aussehen, damit die Gemeinden dennoch entlastet werden können?
+
+Um Antworten auf diese Fragen zu finden, suchen wir insbesondere Vertreterinnen und Vertreter von Gemeinden und anderen Kantonen, die sich unserem Team anschliessen möchten.
 
 ## Key Strenghts and Weaknesses
 
@@ -124,10 +140,12 @@ Please read [CONTRIBUTING.md](/CONTRIBUTING.md) for details on our code of condu
 
 ## Team Members
 
-- Sebastian Fust/GitHub Account (role)
-- Thomas de Rocchi/GitHub Account (role)
-- Name/GitHub Account (role)
-- ...
+- Sebastian Fust (Staatskanzlei St.Gallen)
+- Denis Morel (Mabuco)
+- Darius Bohni (442 Security)
+- Johannes Schuster (Solution Architect Solution Design; Abraxas)
+- Mario Odenbach (ICT-Architekt Solution Design; Abraxas)
+- Fabian Geiger (Software-Ingenieur .Net Development; Abraxas)
 
 ## License
 
