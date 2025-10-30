@@ -148,6 +148,7 @@ Please read [CONTRIBUTING.md](/CONTRIBUTING.md) for details on our code of condu
 - Johannes Schuster (Solution Architect Solution Design; Abraxas)
 - Mario Odenbach (ICT-Architekt Solution Design; Abraxas)
 - Fabian Geiger (Software-Ingenieur .Net Development; Abraxas)
+- ...
 
 ## License
 
