@@ -26,76 +26,21 @@ In den docs finden Sie diverse Dokumente zum St.Galler E-Collecting Projekt.
 
 ## Documentation and Diagrams
 
-*Together, you will contribute to comparing different ways of how to implement e-collecting in Switzerland from A to Z. As part of the [participatory process](https://www.bk.admin.ch/bk/de/home/politische-rechte/e-collecting/partizipativer_prozess.html), your solutions will be discussed in subsequent workshops and will possibly be taken into account for the official decision on the design of the federal e-collecting trials. Proper documentation is key to ensuring that your solution can be understood and evaluated:*
+### Stimmrechtsprüfung mit Stimmregister
 
-1. **[Mermaid](https://mermaid.js.org/) diagram(s) showing interactions and data flows between actors, software and infrastructure components of your solution over time.**
-2. **Wireframes or mockups with user flow showing the user experience of different actors** (using e.g. Figma)
-3. Explain how you addressed the topics presented in the [guidelines](https://www.bk.admin.ch/bk/de/home/politische-rechte/e-collecting/aktuelles.html), filling in the template below.
-4. List the key strengths and weaknesses of your solution.
-5. Explanation of features used (if applicable)
-6. A requirements file with all packages and versions used (if applicable)
-7. Environment code to be run (if applicable)
+![Diagramm Stimmrechtsprüfung mit Stimmregister](./docs/images/Ecol-SR.png)
 
-*For your reference, you will find below an example of two diagrams showing interactions and data flows between actors, software and infrastructure components of ordering a pizza via a third-party delivery website over time. Please replace them with diagrams for your solution.*
+### Stimmrechtsprüfung mit eCH-Standard
 
-### Flowchart: High-level Process (Example)
+![Diagramm Stimmrechtsprüfung mit eCH-Standard](./docs/images/Ecol-ECH-Import.png)
 
-*An overall process flow showing the main steps and system/actor interactions for ordering a pizza online via a delivery website, including software, infrastructure, and handoff to the restaurant and delivery driver.*
+### Stimmrechtsprüfung manuell
 
-```mermaid
+![Diagramm Stimmrechtsprüfung manuell](./docs/images/Ecol-No-ECH.png)
 
-flowchart TD
-    Customer([Customer])
-    DeliverySite("Delivery Website (Web/App)")
-    Backend("Website Backend Server")
-    OrderDB[(Order Database)]
-    Restaurant("Restaurant Order System")
-    Driver("Delivery Driver")
+### Konzept Anbindung E-ID
 
-   Customer-->|"1 Place Order (Pizza+Details)"|DeliverySite
-   DeliverySite-->|"2 Send Order Data"|Backend
-   Backend-->|"3 Store Order"|OrderDB
-   Backend-->|"4 Send Order to Restaurant"|Restaurant
-   Restaurant-->|"5 Ack/Confirmation"|Backend
-   Backend-->|"6 Confirmation & ETA"|DeliverySite
-   DeliverySite-->|"7 Show Confirmation"|Customer
-   Restaurant-->|"8 Assign/Notify Delivery"|Driver
-   Driver-->|"9 Pickup & Deliver"|Customer
-   Driver-->|"10 Update Status"|DeliverySite
-   DeliverySite-->|"11 Show Status"|Customer
-
-```
-
-### Sequence Diagram: Detailed Interactions & Data Flows (Example)
-
-*A step-by-step illustration showing how data and requests are exchanged between actors (customer, delivery site, restaurant, infrastructure), and key software components in the order process.*
-
-```mermaid
-
-sequenceDiagram
-    actor Customer
-    participant WebApp as "Delivery Website (UI)"
-    participant Backend as "Backend Server"
-    participant DB as "Order Database"
-    participant Restaurant as "Restaurant System"
-    actor Driver as "Delivery Driver"
-
-    Customer->>WebApp: Browse menu, select pizza (menu data)
-    Customer->>WebApp: Submit order (pizza, address, payment info)
-    WebApp->>Backend: Create order {pizza, address, payment}
-    Backend->>DB: Save order {orderId, customer, items, payment}
-    Backend->>Restaurant: API: send order {orderId, items, address}
-    Restaurant-->>Backend: Ack/Confirmation {orderId, ETA}
-    Backend-->>WebApp: Show confirmation {orderId, ETA}
-    WebApp-->>Customer: Order confirmation {orderId, ETA}
-    Restaurant->>Driver: Notify driver {pickup, delivery}
-    Driver-->>Restaurant: Pickup ack
-    Driver->>Customer: Deliver pizza
-    Driver->>Backend: Update status {orderId, delivered}
-    Backend->>WebApp: Status update {delivered}
-    WebApp->>Customer: Show status {delivered}
-
-```
+![Diagramm Konzept Anbindung E-ID](./docs/images/Ecol-E-ID.png)
 
 ## User Experience
 
