@@ -25,14 +25,7 @@ Die E-Collecting-Plattform ist so gebaut, dass sie für zukünftige Sammlungen a
 In den docs finden Sie diverse Dokumente zum St.Galler E-Collecting Projekt.
 
 ## Documentation and Diagrams
-Am Hackathon wollen wir uns mit der Frage auseinandersetzen, **wie das System weiterentwickelt werden kann, so dass es auch Kantonen einen Mehrwert bringt, die (noch) nicht über ein zentrales Stimmregister verfügen**.
-
-Dabei stellen sich Fragen wie:
-- Welche Daten müssen ausgetauscht werden und auf welchem Weg?
-- Wie viel Zeitverlust zwischen Unterzeichnung und Bescheinigung einer Unterschrift ist akzeptabel?
-- Wie muss der Prozess aussehen, damit die Gemeinden dennoch entlastet werden können?
-
-Um Antworten auf diese Fragen zu finden, suchen wir insbesondere Vertreterinnen und Vertreter von Gemeinden und anderen Kantonen, die sich unserem Team anschliessen möchten.
+Am Hackathon haben wir uns mit der Frage auseinandergesetzt, **wie das System weiterentwickelt werden kann, so dass es auch Kantonen einen Mehrwert bringt, die (noch) nicht über ein zentrales Stimmregister verfügen**.
 
 ## Am Hackathon entwickelte Lösungsansätze
 ### Stimmrechtsprüfung mit Stimmregister
@@ -40,10 +33,17 @@ Um Antworten auf diese Fragen zu finden, suchen wir insbesondere Vertreterinnen 
 ![Diagramm Stimmrechtsprüfung mit Stimmregister](./docs/images/Ecol-SR.png)
 
 ### Stimmrechtsprüfung mit eCH-Standard
+Bürgerinnen und Bürger können jederzeit eine elektronische Unterschrift abgeben. Die elektronischen Unterschriften werden als ungeprüfte Unterschriften in einer kryptographisch gesicherten Datenbank zwischengespeichert. Sobald eine Mitarbeiterin oder ein Mitarbeiter der Gemeinde einen (noch zu definierenden) eCH-Standard in die E-Collecting-Plattform lädt (Kanal zu definieren), werden die zwischengespeicherten elektronischen Unterschriften automatisiert geprüft und – sofern die Prüfung erfolgreich war – als bescheinigte Unterschriften kryptographisch gesichert hinterlegt. Ab diesem Zeitpunkt ist sichergestellt, dass die Person keine weitere Unterschrift (elektronisch oder physisch) zum entsprechenden Begehren abgeben kann.
+Unterzeichnet eine Person das Begehren in der Zeit zwischen der Abgabe der elektronischen Unterschrift und der automatisierten Prüfung auch physisch, wird die elektronische Unterschrift abgelehnt.
+
+
 
 ![Diagramm Stimmrechtsprüfung mit eCH-Standard](./docs/images/Ecol-ECH-Import.png)
 
 ### Stimmrechtsprüfung manuell
+Für Gemeinden, denen es nicht möglich ist, einen eCH-Standard zu generieren, sieht der Lösungsansatz wie folgt aus: Die elektronischen Unterschriften der Bürgerinnen und Bürger werden ebenfalls als ungeprüfte Unterschriften in einer kryptographisch gesicherten Datenbank zwischengespeichert. Über die E-Collecting-Plattform hat die Gemeinde Einsicht in die abgegebenen elektronischen Unterschriften und prüft diese manuell gegen die EK. Nach erfolgreicher Prüfung werden die Unterschriften – analog zu den physischen – als bescheinigte Unterschriften kryptographisch gesichert hinterlegt. Da die Kontrollzeichen der physischen Unterschriften ebenfalls auf der E-Collecting-Plattform erfasst werden müssen, können Mehrfachunterzeichnungen verhindert werden.
+
+
 
 ![Diagramm Stimmrechtsprüfung manuell](./docs/images/Ecol-No-ECH.png)
 
